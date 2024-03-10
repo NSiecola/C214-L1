@@ -1,3 +1,10 @@
-# Arquivos
+# Pastas
 #############################
 Aulas/
+dist/
+node_modules/
+
+# Arquivos
+#############################
+*.js
+
