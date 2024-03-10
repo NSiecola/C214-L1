@@ -4,14 +4,17 @@ export type Task = {
   targetDate: string
   type?: string
   priority?: string
-  subTasks: Task[]
+  subTasks?: Task[]
 }
 
 export class ToDoList {
-    private tasks: Task[] = []
+  private tasks: Task[] = []
 
-    addTask(task: Task) {
-        this.tasks.push(task)
-    }
-    
+  add(task: Task) {
+    this.tasks.push(task)
+  }
+
+  getTasks() {
+    return this.tasks
+  }
 }
