@@ -3,6 +3,7 @@
 Aulas/
 dist/
 node_modules/
+.vscode/
 
 # Arquivos
 #############################
