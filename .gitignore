@@ -4,6 +4,7 @@ Aulas/
 dist/
 node_modules
 .vscode
+coverage
 
 # Arquivos
 #############################
