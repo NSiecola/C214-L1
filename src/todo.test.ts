@@ -1,6 +1,6 @@
 import { Task, ToDoList } from "./ToDoList"
 
-const anyTask = {
+const anyTask: Task = {
   title: "any_title",
   description: "any_description",
   targetDate: "01/01/2025",
@@ -21,7 +21,7 @@ describe("ToDoList", () => {
     test("should add a valid tasks", () => {
       const todoInstance = new ToDoList()
       const invalidValue: any = {
-        invalidValue: "invalidValue"
+        invalidField: "invalidValue",
       }
       todoInstance.add(invalidValue)
       const tasks = todoInstance.getTasks()
@@ -29,25 +29,7 @@ describe("ToDoList", () => {
     })
   })
 
-  /*describe("Testing updateTask", () => {
-    test("should update a task from the list", () => {
-      const todoInstance = new ToDoList()
-      todoInstance.add(anyTask)
-      const updatedTask = {
-        title: "updated_title",
-        description: "updated_description",
-        targetDate: "01/01/2025",
-        type: "updated_type",
-        priority: "2",
-        subTasks: [],
-      }
-      todoInstance.updateTask(0, updatedTask)
-      const tasks = todoInstance.getTasks()
-      expect(tasks).toEqual([updatedTask])
-    })
-  })
-
-  describe("Testing removeTask", () => {
+  describe("Testing remove", () => {
     test("should remove a task from the list", () => {
       const todoInstance = new ToDoList()
       todoInstance.add(anyTask)
@@ -55,5 +37,23 @@ describe("ToDoList", () => {
       const tasks = todoInstance.getTasks()
       expect(tasks).toEqual([])
     })
-  })*/
+  })
+
+  describe("Testing update", () => {
+    test("should update a task from the list", () => {
+      const todoInstance = new ToDoList()
+      todoInstance.add(anyTask)
+      const newTask = {
+        title: "new_title",
+        description: "new_description",
+        targetDate: "01/01/2025",
+        type: "new_type",
+        priority: "1",
+        subTasks: [],
+      }
+      todoInstance.updateTask(0, newTask)
+      const tasks = todoInstance.getTasks()
+      expect(tasks).toEqual([newTask])
+    })
+  })
 })
