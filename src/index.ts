@@ -24,7 +24,6 @@ async function addNewTask() {
     type: "",
     priority: "",
   }
-
   newTask.title = await getUserInput("Digite o título da tarefa: ")
   newTask.description = await getUserInput("Digite a descrição da tarefa: ")
   newTask.targetDate = await getUserInput("Digite a data limite da tarefa: ")
